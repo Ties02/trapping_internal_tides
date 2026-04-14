@@ -31,7 +31,7 @@ You are used to working with Python, which is an interpreted programming languag
 To run the model, you will first need to compile it. This is also called *building* the model. For this assingment, we recommend to run the model on Gemini, the Science department's computer cluster. It is also possible to run the model on your local machine. In any case, make sure to read the specific instructions below.
 
 <details>
-  <summary>⚠️ **Instructions for using the Gemini cluster [Click me]**</summary>
+  <summary>⚠️ Instructions for using the Gemini cluster [Click me]</summary>
 
   ### Logging in
   1. Open a Terminal. 
@@ -46,14 +46,15 @@ To run the model, you will first need to compile it. This is also called *buildi
   
   ### Analysing data using VSCode on the cluster
   You can use Jupyter Lab on the cluster. This allows you to easily analyze the model output. 
-  1. To do so, you must first load _Conda_: `module load miniconda/3`. Initialize Conda by typing `conda init bash`. You may need to open another bash-shell: type `bash`. You can tell that Conda is loaded when `(base)` is being shown in front of the interpreter.
+  1. To do so, you must first load _Conda_ on gemini: `module load miniconda/3`. Initialize Conda by typing `conda init bash`. You may need to open another bash-shell: type `bash`. You can tell that Conda is loaded when `(base)` is being shown in front of the interpreter.
   2. Navigate to the `trapping_internal_tides` directory: `cd trapping_internal_tides/`, and start Jupyter: `jupyter lab --no-browser.`
-  3. Take note of the Jupyter port number that has been assigned (the four digits in the X's in http://127.0.0.1:XXXX) and the token (the long string after `token=`).
+  3. Take note of the Jupyter port number that has been assigned (the four digits in the X's in the last line: http://127.0.0.1:XXXX or http://localhost:XXXX) and the token (the long string after `token=`).
   4. Open a new terminal window or tab on your local computer. In this terminal we set up an SSH tunnel.
   5. Pick a random number YYYY between 8000 and 9000. This will be our SSH port number for the tunnel. Try another number if something fails.
   6. On your local machine, type `ssh -A -L YYYY:localhost:XXXX 1234567@gemini.science.uu.nl`
   7. Open a browser on your local computer and go to `localhost:YYYY`, where `YYYY` is your chosen portnumber. When asked for a password/token, use the one that you noted in step 2.
   8. These steps above sometimes fail when using MobaXTerm on windows, if that happens, try to use the normal command line (cmd).
+  9. You can close the server by typing ctrl+C
 
   ### Analysing data on your local
   Instead of analysing the data on the cluster, you can also download the data to your local machine and analyse it using your favourite programme. To download data to your local, you can follow these steps:
@@ -65,7 +66,7 @@ More info can be found here: https://github.com/OceanParcels/UtrechtTeam/wiki/Ho
 </details>
 
 <details>
-  <summary>⚠️ **Instructions for using your local machine [Click me]**</summary>
+  <summary>⚠️ Instructions for using your local machine [Click me]</summary>
   The model should be able to build on **MacOS** and **Linux** with the Fortran compiler *gfortran* (part of the *GCC* compiler collection) installed. If you are using MacOS, you may first need to install the Command Line Tools using `xcode-select --install`. Then,   you can install _gfortran_ as part of _GCC_ using the package manager _[Homebrew](https://brew.sh)_ (after installing Homebrew, use `brew install gcc`). If you use **Windows**, you may install **Linux within Windows** (see [these instructions]        (https://docs.microsoft.com/en-us/windows/wsl/about)).
   
   ### Running the model on your local machine
@@ -120,7 +121,7 @@ In the analysis folder, you will find a `micom_tools.py` file, that contains a s
 
 In **tutorial 1** you will try to recover some of the figures in Drijfhout and Maas (2007). Start by setting up the model on Gemini or your local machine and run the model as it is (so you do not need to change the set-up). Analyse the output data using the provided scripts or create your own scripts to do so.
 
-In **tutorial 2** you will have to change parameters to obtain one of the other configurations discussed in Drijfhout and Maas (2007). Below are the places you will have to make changes in the code (although the code is in Fortran, the required changes are so simple that you can make them without detailed understanding of the code). Note that you need to recompile the program using `make`. ⚠️
+In **tutorial 2** you will have to change parameters to obtain one of the other configurations discussed in Drijfhout and Maas (2007). Below are the places you will have to make changes in the code (although the code is in Fortran, the required changes are so simple that you can make them without detailed understanding of the code). ⚠️Note that you need to recompile the program using `make`.
 
 - To change the bottom profile, in `cyclo.f` you must edit `pmer` (line 57) and `poos` (line 49) to define the bottom profile in respectively length and width.
 - To change $f$ you must edit `geopar.f` (line 22-23)
@@ -137,6 +138,7 @@ In **tutorial 3** we ask you to configure at least 1 configuration that was **NO
 - Maybe you want to change another parameter. Which one would you choose (try to argue, even if you have no time to do this)?
 - In our examples $N$ > $f$. What happens if $f$ > 10 * $N$? Can you design such a combination that keeps tau unchanged? What happens if you apply this combination of $f$ and $N$? Note that changing $N$ implies changing theta.
 
+## Reporting
 For the assignment, we ask you to hand in a report in which you
 - Motivate your choice of figures for three different simulations (choose 2-4 per simulation)
 - Write a clear interpretation of the figures
@@ -144,4 +146,4 @@ For the assignment, we ask you to hand in a report in which you
 - Explain why you see trapping of internal waves in the initial set-up (tutorial 1) and not in other set-ups (different $f$ values and bottom profiles)
 - Think about the story you want to tell (see the first bullet) and highlight the main conclusions
 
-The report can be written in your usual groups and the deadline for this assignment is **May 28th, 2024**.
+The report can be written in your usual groups and the deadline for this assignment is **May 19th, 2026**.
