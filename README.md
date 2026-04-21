@@ -44,7 +44,7 @@ To run the model, you will first need to compile it. This is also called *buildi
   2. Navigate to the `model` directory: `cd trapping_internal_tides/model/`
   3. Use the `make clean` command, and after that use the `make` command to build the model.
   
-  ### Analysing data using VSCode on the cluster
+  ### Analysing data using Jupyter Lab on the cluster
   You can use Jupyter Lab on the cluster. This allows you to easily analyze the model output. 
   1. To do so, you must first load _Conda_ on gemini: `module load miniconda/3`. Initialize Conda by typing `conda init bash`. You may need to open another bash-shell: type `bash`. You can tell that Conda is loaded when `(base)` is being shown in front of the interpreter.
   2. Navigate to the `trapping_internal_tides` directory: `cd trapping_internal_tides/`, and start Jupyter: `jupyter lab --no-browser.`
