@@ -38,6 +38,7 @@ To run the model, you will first need to compile it. This is also called *buildi
   2. Connect to the Gemini cluster by typing `ssh 1234567@gemini.science.uu.nl` using your Solis-ID in place of 1234567.
   3. Type your Solis-ID password.
   4. You're in! Your home directory is `/nethome/1234567`. It has a quotum of 2GB. If you need to temporarily store large amounts of data, create a personal scratch folder on the scratch disk: `mkdir /scratch/1234567`. Please do not store data on scratch folders for longer than 2 weeks.
+  5. You can navigate the cluster and modify files using Linux on the command line. If you are not familiar, here are some basic commands: http://geeksforgeeks.org/linux-unix/basic-linux-commands/
 
   ### Running the model on the cluster
   1. You can download the files in this repository by first navigating to the directory where you want to store them (`cd /destination/path`) and running `git clone https://github.com/Ties02/trapping_internal_tides`
