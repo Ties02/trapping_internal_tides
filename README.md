@@ -61,9 +61,8 @@ To run the model, you will first need to compile it. This is also called *buildi
   Instead of analysing the data on the cluster, you can also download the data to your local machine and analyse it using your favourite programme. To download data to your local, you can follow these steps:
   1. Open a Terminal.
   2. Copy data from your Gemini directory to your local directory using: `scp 1234567@gemini.science.uu.nl:/path_to_output_data /path_to_local_analysis_directory` using your Solis-ID in place of 1234567.
+  3. You can also use `rsync -av 1234567@gemini.science.uu.nl:/path_to_remote_folder/ /path_to_local_folder` to synchronize folders, or use the program `FileZilla Client`: https://filezilla-project.org/
   
-More info can be found here: https://github.com/OceanParcels/UtrechtTeam/wiki/How-to-run-parcels-on-lorenz-or-gemini
-
 </details>
 
 <details>
@@ -74,6 +73,9 @@ More info can be found here: https://github.com/OceanParcels/UtrechtTeam/wiki/Ho
   1. You can download the files in this repository by first navigating to the directory where you want to store them (`cd /destination/path`) and running `git clone https://github.com/Ties02/trapping_internal_tides.git`
   2. Navigate to the `model` directory: `cd trapping_internal_tides/model/`
   3. Use the `make clean` command, and after that use the `make` command to build the model.
+
+  ### Analysing data
+  You can find the output in the Linux partition in Explorer, below This PC and Network. If you have problems with accessing the files (`Windows cannot access \\wsl`), open the program `Register-editor`, navigate to    `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\NetworkProvider`, and add `P9NP` tot the comma-seperated list `ProviderOrder` under `HwOrder` and `Order`. More information: https://github.com/microsoft/WSL/issues/4027#issuecomment-496628274
 
 </details>
 
